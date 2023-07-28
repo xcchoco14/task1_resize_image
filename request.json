@@ -1,0 +1,10 @@
+POST / HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Content-Length: 1024
+
+{
+  "input_jpeg": "data:image/jpeg;base64,...",
+  "desired_width": 100,
+  "desired_height": 100
+}
