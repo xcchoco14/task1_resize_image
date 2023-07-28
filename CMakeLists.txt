@@ -4,7 +4,7 @@ project(VSCode)
 include(CTest)
 enable_testing()
 
-find_package(OpenCV 4.8.0 REQUIRED)
+find_package(OpenCV 4.5.4 REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(VSCode resize_img.cpp base64.h base64.cpp)
