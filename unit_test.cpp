@@ -115,18 +115,14 @@ int main() {
   io_service io_service;
   ip::tcp::endpoint endpoint(ip::tcp::v4(), 8080);
   ip::tcp::acceptor acceptor(io_service, endpoint);
-  cout << "done 1" << endl;
 
   // Handle HTTP requests.
   while (true) {
     ip::tcp::socket socket(io_service);
-    cout << "done 2" << endl;
     acceptor.accept(socket);
-    cout << "done 3" << endl;
 
     // Create a thread to handle the request.
     boost::thread thread(boost::bind(&handle_request, boost::ref(io_service), boost::ref(socket)));
-    cout << "done 4" << endl;
   }
 
   return 0;
